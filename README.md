@@ -1,3 +1,6 @@
+[![Build status](https://github.com/twyleg/track_generator/actions/workflows/checks.yml/badge.svg)]()
+[![GitHub latest commit](https://badgen.net/github/last-commit/twyleg/track_generator)](https://GitHub.com/twyleg/track_generator/commit/)
+
 # Template C++ Project
 
 Simple CMake based template for a common C++ project.
