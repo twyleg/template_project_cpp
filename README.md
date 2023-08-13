@@ -1,5 +1,5 @@
-[![Build status](https://github.com/twyleg/track_generator/actions/workflows/checks.yml/badge.svg)]()
-[![GitHub latest commit](https://badgen.net/github/last-commit/twyleg/track_generator)](https://GitHub.com/twyleg/track_generator/commit/)
+[![Build status](https://github.com/twyleg/template_cpp_project/actions/workflows/unit_tests.yaml/badge.svg)]()
+[![GitHub latest commit](https://badgen.net/github/last-commit/twyleg/template_cpp_project)](https://GitHub.com/twyleg/template_cpp_project/commit/)
 
 # Template C++ Project
 
