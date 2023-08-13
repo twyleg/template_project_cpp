@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.1.0)
+cmake_minimum_required(VERSION 3.26.4)
 
-project(CppProjectTemplate)
+project(cpp_project_template)
 
 # Externals
 add_subdirectory(external/googletest/)
@@ -12,4 +12,4 @@ add_subdirectory(libs/example_lib/)
 add_subdirectory(apps/example_app)
 
 # Unit-Test
-add_subdirectory(unit_test/)
+add_subdirectory(unit_tests/)

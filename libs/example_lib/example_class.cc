@@ -1,9 +1,10 @@
-// Copyright (C) 2020 twyleg
+// Copyright (C) 2023 twyleg
 #include "example_class.h"
 
 #include <boost/optional.hpp>
 #include <fmt/core.h>
-#include <iostream>
+
+namespace cpp_project_templace::example_lib {
 
 ExampleClass::ExampleClass(int exampleAttribute) :
 	mExampleAttribute(exampleAttribute)
@@ -15,6 +16,7 @@ int ExampleClass::getExampleAttribute() const {
 
 void ExampleClass::printExampleAttribute() const {
 	boost::optional<int> foo;
-	std::cout << fmt::format("mExampleAttribute {}", mExampleAttribute) << std::endl;
+	fmt::print("mExampleAttribute {}", mExampleAttribute);
 }
 
+}
