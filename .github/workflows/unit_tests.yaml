@@ -2,20 +2,20 @@ name: Unit Tests
 run-name: unit_tests
 on: [push]
 jobs:
-  run-code_checks:
-	runs-on: ubuntu-latest
-	steps:
-	  - name: Checkout repository
-	  - uses: actions/checkout@v3
-		with:
-		  submodules: true
-	  - name: 'Build'
-		run: |
+	run-unit_tests:
+		runs-on: ubuntu-latest
+		steps:
+		- name: Checkout repository
+		  uses: actions/checkout@v3
+		  with:
+			submodules: true
+		- name: 'Build'
+		  run: |
 			mkdir build/
 			cd build/
 			cmake ..
 			make -j3
-	  - name: 'Run tests'
-		run: |
+		- name: 'Run tests'
+		  run: |
 			cd build/unit_tests/
 			./unit_tests
