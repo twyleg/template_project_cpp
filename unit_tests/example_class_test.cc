@@ -1,4 +1,4 @@
-// Copyright (C) 2020 twyleg
+// Copyright (C) 2023 twyleg
 #include <gtest/gtest.h>
 
 #include <example_lib/example_class.h>
@@ -19,7 +19,7 @@ public:
 
 protected:
 
-	ExampleClass mExampleClass;
+	cpp_project_templace::example_lib::ExampleClass mExampleClass;
 
 };
 

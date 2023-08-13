@@ -1,5 +1,7 @@
-// Copyright (C) 2020 twyleg
+// Copyright (C) 2023 twyleg
 #pragma once
+
+namespace cpp_project_templace::example_lib {
 
 class ExampleClass {
 
@@ -15,3 +17,4 @@ private:
 	const int mExampleAttribute;
 };
 
+}

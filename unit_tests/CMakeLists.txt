@@ -1,5 +1,5 @@
 # Copyright (C) 2023 twyleg
-set(TARGET_NAME example_app)
+set(TARGET_NAME unit_tests)
 
 
 #
@@ -7,6 +7,7 @@ set(TARGET_NAME example_app)
 #
 add_executable(${TARGET_NAME}
 	main.cc
+	example_class_test.cc
 )
 
 
@@ -25,4 +26,8 @@ set_target_properties(${TARGET_NAME}
 #
 target_link_libraries(${TARGET_NAME}
 	example_lib
+	GTest::gmock
+	GTest::gtest
+	GTest::gmock_main
+	GTest::gtest_main
 )
