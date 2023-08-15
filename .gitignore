@@ -1,3 +1,5 @@
 build/
 **/build
+
+**/*.kate-swp
 CMakeLists.txt.user

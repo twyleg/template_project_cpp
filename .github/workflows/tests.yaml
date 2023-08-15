@@ -1,0 +1,72 @@
+name: tests
+run-name: tests
+on:
+  workflow_call:
+
+  push:
+    branches:
+      - "**"
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Checkout repository'
+      uses: actions/checkout@v3
+      with:
+        submodules: true
+    - name: 'Install dependencies'
+      run: sudo bash scripts/install_dependencies_debian_ubuntu.sh
+    - name: 'Build'
+      run: |
+        mkdir build/
+        cd build/
+        cmake ..
+        make -j3
+    - name: 'Run tests'
+      run: |
+        cd build/unit_tests/
+        ./unit_tests
+        
+  smoke-tests-linux:
+    strategy:
+      fail-fast: false
+      matrix:
+        image: [ 'ubuntu:focal', 'ubuntu:jammy', 'debian:latest', 'archlinux:latest' ]
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ matrix.image }}
+      env:
+        TZ: Europe/Berlin
+    steps:
+    - name: 'Install git (Ubuntu, Debian)'
+      if: ${{ contains(fromJSON('["ubuntu:focal", "ubuntu:jammy", "debian:latest"]'), matrix.image) }}
+      run: apt-get update && apt-get install -y git
+    - name: 'Install git (Arch)'
+      if: ${{ contains('archlinux:latest', matrix.image) }}
+      run: pacman -Syu --noconfirm git
+    - name: 'Checkout repository'
+      uses: actions/checkout@v3
+      with:
+        submodules: true
+    - name: Setup timezone
+      run: ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+    - name: 'Install dependencies (Ubuntu, Debian)'
+      if: ${{ contains(fromJSON('["ubuntu:focal", "ubuntu:jammy", "debian:latest"]'), matrix.image) }}
+      run:  bash scripts/install_dependencies_debian_ubuntu.sh
+    - name: 'Install dependencies (Arch)'
+      if: ${{ contains('archlinux:latest', matrix.image) }}
+      run: bash scripts/install_dependencies_arch.sh
+    - name: 'Build'
+      run: |
+        mkdir build/
+        cd build/
+        cmake ..
+        make -j3
+    - name: 'Run unit-tests'
+      run: |
+        cd build/unit_tests/
+        ./unit_tests
+    - name: 'Run smoke-test'
+      run: |
+        cd build/apps/template_project_cpp/
+        ./template_project_cpp --version
