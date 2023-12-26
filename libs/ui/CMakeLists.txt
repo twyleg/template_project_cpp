@@ -1,5 +1,5 @@
 # Copyright (C) 2023 twyleg
-set(TARGET_NAME example_lib)
+set(TARGET_NAME ui)
 
 
 #
@@ -7,14 +7,17 @@ set(TARGET_NAME example_lib)
 #
 find_package(fmt REQUIRED)
 find_package(Boost COMPONENTS REQUIRED system)
+find_package(Qt6 COMPONENTS REQUIRED Core Widgets Qml Quick QuickControls2)
 
 
 #
 # add source files to target
 #
 add_library(${TARGET_NAME}
-	example_class.cc
-	example_class.h
+        ui.cc
+        ui.h
+        ui.qrc
+        resources/origins.txt
 )
 
 
@@ -24,7 +27,9 @@ add_library(${TARGET_NAME}
 set_target_properties(${TARGET_NAME}
 	PROPERTIES
 	CXX_STANDARD 17
-	INCLUDE_CURRENT_DIR ON
+        INCLUDE_CURRENT_DIR ON
+        AUTOMOC ON
+        AUTORCC ON
 )
 
 
@@ -34,6 +39,11 @@ set_target_properties(${TARGET_NAME}
 target_link_libraries(${TARGET_NAME}
 	fmt::fmt
 	Boost::system
+        Qt::Core
+        Qt::Widgets
+        Qt::Qml
+        Qt::Quick
+        Qt::QuickControls2
 )
 
 

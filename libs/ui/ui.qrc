@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main_window.qml</file>
+        <file>resources/svg/made_with_linux_gray.svg</file>
+    </qresource>
+</RCC>

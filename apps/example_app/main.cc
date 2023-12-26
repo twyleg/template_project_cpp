@@ -1,14 +1,10 @@
 // Copyright (C) 2023 twyleg
-#include <example_lib/example_class.h>
-
-#include <iostream>
-#include <vector>
-
+#include <ui/ui.h>
 
 int main(int argc, char *argv[]) {
-	const cpp_project_templace::example_lib::ExampleClass exampleClass(42);
 
-	exampleClass.printExampleAttribute();
+    Q_INIT_RESOURCE(ui);
 
-	return 0;
+    cpp_project_template::ui::UI ui(argc, argv);
+    return ui.run();
 }
