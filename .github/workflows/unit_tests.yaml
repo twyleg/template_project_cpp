@@ -12,10 +12,13 @@ jobs:
     - name: 'Install dependencies'
       run: |
         sudo apt update
-        sudo apt install cmake \
-        	g++ \
-        	libfmt-dev \
-        	libboost-all-dev
+        sudo apt install \
+            cmake \
+            g++ \
+            libfmt-dev \
+            libboost-all-dev \
+            "qt6-*" \
+            "qml6-module-6"
     - name: 'Build'
       run: |
         mkdir build/

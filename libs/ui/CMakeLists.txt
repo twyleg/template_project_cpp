@@ -17,7 +17,6 @@ add_library(${TARGET_NAME}
         ui.cc
         ui.h
         ui.qrc
-        resources/origins.txt
 )
 
 
