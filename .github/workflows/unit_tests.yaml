@@ -11,14 +11,14 @@ jobs:
         submodules: true
     - name: 'Install dependencies'
       run: |
-        sudo apt update
-        sudo apt install \
+        sudo apt-get update
+        sudo apt-get install -y \
             cmake \
             g++ \
             libfmt-dev \
             libboost-all-dev \
             "qt6-*" \
-            "qml6-module-6"
+            "qml6-module-*"
     - name: 'Build'
       run: |
         mkdir build/
