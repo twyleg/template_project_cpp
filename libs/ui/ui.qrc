@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>qml/main_window.qml</file>
         <file>resources/svg/made_with_linux_gray.svg</file>
+        <file>resources/ogg/sydney_airport_final_call.ogg</file>
     </qresource>
 </RCC>

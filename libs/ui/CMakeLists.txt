@@ -7,7 +7,7 @@ set(TARGET_NAME ui)
 #
 find_package(fmt REQUIRED)
 find_package(Boost COMPONENTS REQUIRED system)
-find_package(Qt6 COMPONENTS REQUIRED Core Widgets Qml Quick QuickControls2)
+find_package(Qt6 COMPONENTS REQUIRED Core Widgets Multimedia Qml Quick QuickControls2)
 
 
 #
@@ -17,6 +17,7 @@ add_library(${TARGET_NAME}
         ui.cc
         ui.h
         ui.qrc
+        model.h
 )
 
 
@@ -24,8 +25,8 @@ add_library(${TARGET_NAME}
 # set target properties
 #
 set_target_properties(${TARGET_NAME}
-	PROPERTIES
-	CXX_STANDARD 17
+    PROPERTIES
+        CXX_STANDARD 17
         INCLUDE_CURRENT_DIR ON
         AUTOMOC ON
         AUTORCC ON
@@ -36,13 +37,14 @@ set_target_properties(${TARGET_NAME}
 # link against libs
 #
 target_link_libraries(${TARGET_NAME}
-	fmt::fmt
-	Boost::system
-        Qt::Core
-        Qt::Widgets
-        Qt::Qml
-        Qt::Quick
-        Qt::QuickControls2
+    fmt::fmt
+    Boost::system
+    Qt::Core
+    Qt::Widgets
+    Qt::Multimedia
+    Qt::Qml
+    Qt::Quick
+    Qt::QuickControls2
 )
 
 

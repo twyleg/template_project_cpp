@@ -1,6 +1,7 @@
 // Copyright (C) 2023 twyleg
 import QtQuick 2.0
 import QtQuick.Controls 2.0
+import QtQuick.Layouts
 
 ApplicationWindow
 {
@@ -55,29 +56,75 @@ ApplicationWindow
             }
         }
 
-        Image {
+        RowLayout {
 
-            id: rotatingImage
-
-            height: parent.height * 0.5
+            anchors.top: parent.verticalCenter
             anchors.bottom: parent.bottom
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.left: parent.left
+            anchors.right: parent.right
 
-            source: "qrc:/resources/svg/made_with_linux_gray.svg"
+            spacing: 2
 
-            sourceSize.width: width
-            fillMode: Image.PreserveAspectFit
+            Button {
+                id: soundButton
 
-            PropertyAnimation {
-                id: rotatingImageAnimation;
-                target: rotatingImage
-                property: "rotation"
-                from: 0
-                to: 360
-                duration: 2000
-                loops: Animation.Infinite
-                running: true
+                text: "Press for sound!"
+
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+
+                Layout.horizontalStretchFactor: 1
+                Layout.alignment: Qt.AlignHCenter
+
+                Layout.margins: 20
+
+                onPressed: {
+                    model.requestPlaySound();
+                }
+
             }
+
+            Image {
+
+                id: rotatingImage
+
+                height: parent.height
+
+                source: "qrc:/resources/svg/made_with_linux_gray.svg"
+
+                sourceSize.width: width
+                fillMode: Image.PreserveAspectFit
+
+                Layout.horizontalStretchFactor: 1
+                Layout.alignment: Qt.AlignHCenter
+
+                PropertyAnimation {
+                    id: rotatingImageAnimation;
+                    target: rotatingImage
+                    property: "rotation"
+                    from: 0
+                    to: 360
+                    duration: 2000
+                    loops: Animation.Infinite
+                    running: true
+                }
+            }
+
+            Label {
+                id: label
+
+                text: "Foo"
+
+                Layout.horizontalStretchFactor: 1
+                Layout.alignment: Qt.AlignHCenter
+
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+
+                Layout.margins: 20
+
+            }
+
         }
     }
 }
