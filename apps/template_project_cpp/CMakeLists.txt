@@ -1,12 +1,12 @@
-# Copyright (C) 2023 twyleg
-set(TARGET_NAME example_app)
+# Copyright (C) 2024 twyleg
+set(TARGET_NAME template_project_cpp)
 
 
 #
 # add source files to target
 #
 add_executable(${TARGET_NAME}
-	main.cc
+    main.cc
 )
 
 
@@ -14,9 +14,9 @@ add_executable(${TARGET_NAME}
 # set target properties
 #
 set_target_properties(${TARGET_NAME}
-	PROPERTIES
-	CXX_STANDARD 17
-	INCLUDE_CURRENT_DIR ON
+    PROPERTIES
+    CXX_STANDARD 17
+    INCLUDE_CURRENT_DIR ON
 )
 
 
@@ -24,5 +24,5 @@ set_target_properties(${TARGET_NAME}
 # link against libs
 #
 target_link_libraries(${TARGET_NAME}
-	example_lib
+    template_project_cpp::core
 )

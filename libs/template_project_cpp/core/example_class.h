@@ -1,7 +1,7 @@
-// Copyright (C) 2023 twyleg
+// Copyright (C) 2024 twyleg
 #pragma once
 
-namespace cpp_project_templace::example_lib {
+namespace template_project_cpp::core {
 
 class ExampleClass {
 
