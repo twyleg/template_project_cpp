@@ -1,12 +1,13 @@
-# Copyright (C) 2023 twyleg
-set(TARGET_NAME ui)
+# Copyright (C) 2024 twyleg
+set(NAMESPACE template_project_cpp)
+set(MODULE ui)
 
+
+set(TARGET_NAME "${NAMESPACE}_${MODULE}")
 
 #
 # find packages
 #
-find_package(fmt REQUIRED)
-find_package(Boost COMPONENTS REQUIRED system)
 find_package(Qt6 COMPONENTS REQUIRED Core Widgets Multimedia Qml Quick QuickControls2)
 
 
@@ -14,11 +15,13 @@ find_package(Qt6 COMPONENTS REQUIRED Core Widgets Multimedia Qml Quick QuickCont
 # add source files to target
 #
 add_library(${TARGET_NAME}
-        ui.cc
-        ui.h
-        ui.qrc
-        model.h
+    ui.cc
+    ui.h
+    ui.qrc
+    model.h
 )
+
+add_library("${NAMESPACE}::${MODULE}" ALIAS ${TARGET_NAME})
 
 
 #
@@ -37,8 +40,6 @@ set_target_properties(${TARGET_NAME}
 # link against libs
 #
 target_link_libraries(${TARGET_NAME}
-    fmt::fmt
-    Boost::system
     Qt::Core
     Qt::Widgets
     Qt::Multimedia
@@ -52,5 +53,5 @@ target_link_libraries(${TARGET_NAME}
 # add parent folder to targets include directories
 #
 target_include_directories(${TARGET_NAME}
-	PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/..
+    PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../../
 )

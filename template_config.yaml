@@ -1,0 +1,28 @@
+placeholder: template_project_cpp
+
+update_files:
+  - README.md
+  - CMakeLists.txt
+  - apps/template_project_cpp/CMakeLists.txt
+  - apps/template_project_cpp/main.cc
+  - libs/template_project_cpp/core/CMakeLists.txt
+  - libs/template_project_cpp/core/example_class.cc
+  - libs/template_project_cpp/core/example_class.h
+  - libs/template_project_cpp/ui/model.h
+  - libs/template_project_cpp/ui/ui.cc
+  - libs/template_project_cpp/ui/ui.h
+  - unit_tests/CMakeLists.txt
+  - unit_tests/main.cc
+  - unit_tests/example_class_test.cc
+
+
+rename_files:
+
+rename_dirs:
+  - apps/template_project_cpp/
+  - libs/template_project_cpp/
+
+remove_files:
+  - template_config.yaml
+
+remove_dirs:

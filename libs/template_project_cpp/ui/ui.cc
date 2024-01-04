@@ -1,4 +1,4 @@
-// Copyright (C) 2023 twyleg
+// Copyright (C) 2024 twyleg
 #include "ui.h"
 
 #include <QQmlContext>
@@ -8,7 +8,7 @@
 
 #include <iostream>
 
-namespace cpp_project_template::ui {
+namespace template_project_cpp::ui {
 
 UI::UI(int argc, char **argv) :
     mArgc(argc),

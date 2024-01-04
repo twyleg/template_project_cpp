@@ -73,7 +73,7 @@ ApplicationWindow
                 Layout.fillWidth: true
                 Layout.fillHeight: true
 
-                Layout.horizontalStretchFactor: 1
+                // Layout.horizontalStretchFactor: 1
                 Layout.alignment: Qt.AlignHCenter
 
                 Layout.margins: 20
@@ -95,7 +95,7 @@ ApplicationWindow
                 sourceSize.width: width
                 fillMode: Image.PreserveAspectFit
 
-                Layout.horizontalStretchFactor: 1
+                // Layout.horizontalStretchFactor: 1
                 Layout.alignment: Qt.AlignHCenter
 
                 PropertyAnimation {
@@ -115,7 +115,7 @@ ApplicationWindow
 
                 text: "Foo"
 
-                Layout.horizontalStretchFactor: 1
+                // Layout.horizontalStretchFactor: 1
                 Layout.alignment: Qt.AlignHCenter
 
                 Layout.fillWidth: true

@@ -1,4 +1,4 @@
-// Copyright (C) 2023 twyleg
+// Copyright (C) 2024 twyleg
 #include <gtest/gtest.h>
 
 int main(int argc, char **argv)

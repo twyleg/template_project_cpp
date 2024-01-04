@@ -1,4 +1,4 @@
-// Copyright (C) 2023 twyleg
+// Copyright (C) 2024 twyleg
 #pragma once
 
 #include "model.h"
@@ -9,7 +9,7 @@
 #include <QMediaPlayer>
 #include <QAudioOutput>
 
-namespace cpp_project_template::ui {
+namespace template_project_cpp::ui {
 
 class UI: public QObject  {
 

@@ -5,7 +5,7 @@
 #include <QtMultimedia/QMediaPlayer>
 #include <QStringListModel>
 
-namespace cpp_project_template::ui {
+namespace template_project_cpp::ui {
 
 #define ADD_PROPERTY(datatype, name, funcName, initial_value) \
 private: \
