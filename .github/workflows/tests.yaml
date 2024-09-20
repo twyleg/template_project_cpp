@@ -1,9 +1,18 @@
-name: Unit Tests
-run-name: unit_tests
-on: [push]
+name: tests
+run-name: tests
+on:
+  workflow_call:
+
+  push:
+    branches:
+      - "*"
 jobs:
-  run-unit_tests:
-    runs-on: ubuntu-latest
+  unittests:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest, ubuntu-24.04, ubuntu-22.04 ]
+    runs-on: ${{ matrix.os }}
     steps:
     - name: 'Checkout repository'
       uses: actions/checkout@v3
