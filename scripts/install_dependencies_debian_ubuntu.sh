@@ -11,6 +11,9 @@ apt-get install -y \
 	g++ \
 	libfmt-dev \
         libboost-all-dev \
+        libegl1 \
+        libgl1 \
+        libegl1-mesa-dev \
         qt6-* \
         qml6-module-*
 
