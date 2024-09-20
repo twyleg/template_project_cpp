@@ -39,7 +39,7 @@ jobs:
         TZ: Europe/Berlin
     steps:
     - name: 'Install git (Ubuntu, Debian)'
-      if: ${{ contains(fromJSON('["ubuntu:focal", "ubuntu:jammy", "debian:latest"]'), matrix.image) }}
+      if: ${{ contains(fromJSON('["ubuntu:latest", "ubuntu:noble", "ubuntu:jammy", "debian:latest"]'), matrix.image) }}
       run: apt-get update && apt-get install -y git
     - name: 'Install git (Arch)'
       if: ${{ contains('archlinux:latest', matrix.image) }}
@@ -51,7 +51,7 @@ jobs:
     - name: Setup timezone
       run: ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
     - name: 'Install dependencies (Ubuntu, Debian)'
-      if: ${{ contains(fromJSON('["ubuntu:focal", "ubuntu:jammy", "debian:latest"]'), matrix.image) }}
+      if: ${{ contains(fromJSON('["ubuntu:latest", "ubuntu:noble", "ubuntu:jammy", "debian:latest"]'), matrix.image) }}
       run:  bash scripts/install_dependencies_debian_ubuntu.sh
     - name: 'Install dependencies (Arch)'
       if: ${{ contains('archlinux:latest', matrix.image) }}
