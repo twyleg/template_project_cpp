@@ -1,6 +1,7 @@
 placeholder: template_project_cpp
 
 update_files:
+  - .github/workflows/tests.yaml
   - README.md
   - CMakeLists.txt
   - apps/template_project_cpp/CMakeLists.txt

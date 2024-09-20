@@ -1,5 +1,6 @@
 # Copyright (C) 2024 twyleg
-cmake_minimum_required(VERSION 3.25.1)
+cmake_minimum_required(VERSION 3.16.3)
+
 
 project(template_project_cpp)
 
@@ -10,8 +11,8 @@ add_subdirectory(external/googletest/)
 add_subdirectory(libs/template_project_cpp/core/)
 add_subdirectory(libs/template_project_cpp/ui/)
 
-# Apos
-add_subdirectory(apps/template_project_cpp/)
+# Apps
+add_subdirectory(apps/template_project_cpp)
 
 # Unit-Test
 add_subdirectory(unit_tests/)
