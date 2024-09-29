@@ -1,4 +1,5 @@
-placeholder: template_project_cpp
+placeholder:
+  - template_project_cpp
 
 update_files:
   - .github/workflows/tests.yaml
